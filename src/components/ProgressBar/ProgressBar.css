@@ -1,0 +1,109 @@
+.progress-container {
+  width: 100%;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progress-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.progress-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.progress {
+  width: 100%;
+  background-color: #f3f4f6;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress--small {
+  height: 4px;
+}
+
+.progress--medium {
+  height: 8px;
+}
+
+.progress--large {
+  height: 12px;
+}
+
+.progress__fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 9999px;
+}
+
+/* Variants */
+.progress--default .progress__fill {
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+}
+
+.progress--success .progress__fill {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.progress--warning .progress__fill {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.progress--danger .progress__fill {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+/* Animation for when progress updates */
+.progress__fill {
+  position: relative;
+}
+
+.progress__fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .progress {
+    background-color: #374151;
+  }
+
+  .progress-label {
+    color: #f9fafb;
+  }
+
+  .progress-value {
+    color: #d1d5db;
+  }
+}

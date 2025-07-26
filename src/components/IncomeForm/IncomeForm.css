@@ -1,0 +1,127 @@
+.income-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.income-form__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.income-form__description {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.income-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.income-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.income-form__checkbox {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #374151;
+}
+
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.checkbox-input:checked + .checkbox-custom {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 6px;
+  height: 10px;
+  border: 2px solid white;
+  border-top: none;
+  border-left: none;
+}
+
+.checkbox-input:focus + .checkbox-custom {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.checkbox-text {
+  font-weight: 500;
+}
+
+.income-form__submit {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .income-form__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .income-form__title {
+    font-size: 20px;
+  }
+
+  .income-form__description {
+    font-size: 14px;
+  }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .income-form__title {
+    color: #f9fafb;
+  }
+
+  .income-form__description {
+    color: #d1d5db;
+  }
+
+  .checkbox-label {
+    color: #f3f4f6;
+  }
+
+  .checkbox-custom {
+    background-color: #374151;
+    border-color: #6b7280;
+  }
+}
