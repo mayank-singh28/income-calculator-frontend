@@ -86,11 +86,6 @@
   justify-content: center;
 }
 
-.income-tracker__start-btn,
-.income-tracker__stop-btn {
-  min-width: 200px;
-}
-
 .rates-grid {
   display: grid;
   gap: 16px;
@@ -144,11 +139,6 @@
 
   .income-tracker__title {
     font-size: 20px;
-  }
-
-  .income-tracker__start-btn,
-  .income-tracker__stop-btn {
-    min-width: 100%;
   }
 }
 
